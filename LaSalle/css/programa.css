@@ -1,0 +1,8 @@
+/* Estilos de la página: Programa */
+.agenda { list-style: none; border-left: 3px solid var(--blue); margin-left: 8px; }
+.agenda li { position: relative; display: grid; grid-template-columns: 90px 1fr; gap: 18px; padding: 0 0 34px 28px; }
+.agenda li::before { content: ""; position: absolute; left: -11px; top: 6px; width: 19px; height: 19px; border-radius: 50%; background: var(--yellow); border: 3px solid var(--navy); }
+.agenda time { font-size: 1.35rem; font-weight: 800; color: var(--blue); }
+.agenda h3 { font-size: 1.3rem; margin-bottom: 4px; }
+.agenda p { color: var(--dim); }
+@media (max-width: 560px) { .agenda li { grid-template-columns: 1fr; gap: 4px; } }

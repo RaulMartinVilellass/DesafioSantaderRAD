@@ -1,0 +1,7 @@
+/* Estilos de la página: Centros */
+.centros { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.centro { padding: 30px 30px 30px 34px; border-radius: 22px; background: #fff; border-left: 8px solid var(--blue); box-shadow: 0 10px 30px rgba(42, 58, 156, 0.1); transition: border-color 0.2s, transform 0.2s; }
+.centro:hover { border-color: var(--yellow); transform: translateX(4px); }
+.centro h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.centro p { color: var(--dim); }
+@media (max-width: 700px) { .centros { grid-template-columns: 1fr; } }

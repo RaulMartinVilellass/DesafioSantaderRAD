@@ -1,0 +1,5 @@
+/* Estilos de la página: Iniciar sesión */
+.caja { max-width: 440px; margin: 72px auto 0; padding: 40px 36px; border-radius: 28px; background: #fff; box-shadow: 0 30px 60px rgba(42, 58, 156, 0.18); }
+.caja h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 24px; }
+.extra { margin-top: 22px; color: var(--dim); }
+.extra a { color: var(--blue); font-weight: 700; text-decoration: underline; }

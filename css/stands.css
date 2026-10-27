@@ -1,0 +1,11 @@
+/* Estilos de la página: Stands */
+.filtros { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
+.filtros button { font: inherit; font-weight: 600; padding: 9px 20px; border-radius: 999px; border: 2px solid var(--navy); background: transparent; color: var(--navy); cursor: pointer; transition: background 0.2s; }
+.filtros button:hover, .filtros button.on { background: var(--navy); color: #fff; }
+.rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+.stand { display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border-radius: 24px; background: #fff; box-shadow: 0 10px 30px rgba(42, 58, 156, 0.12); }
+.stand.oculto { display: none; }
+.etiqueta { padding: 3px 12px; border-radius: 999px; background: var(--yellow); font-size: 0.82rem; font-weight: 700; margin-bottom: 14px; }
+.stand h3 { font-size: 1.35rem; margin-bottom: 8px; }
+.stand p { color: var(--dim); margin-bottom: 22px; flex-grow: 1; }
+.stand .btn { padding: 11px 24px; font-size: 0.95rem; }

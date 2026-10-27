@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Salle Business Match</title>
+  <meta name="description" content="Feria virtual que conecta empresas y talento joven. Participa como empresa o regístrate como visitante.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/comun.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header>
+  <div class="menu-responsive">
+
+    <a href="index.html" class="marca"><span class="logo">LSBM</span>La Salle Business Match</a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">☰</label>
+
+    <!-- Enlaces a las demás páginas (pendientes de crear) -->
+    <nav class="menu-nav">
+      <a class="enlace-menu" href="programa.html">Programa</a>
+      <a class="enlace-menu" href="stands.html">Stands</a>
+      <a class="enlace-menu" href="ranking.html">Ranking</a>
+      <a class="enlace-menu" href="centros.html">Centros</a>
+      <a class="enlace-menu" href="nosotros.html">Nosotros</a>
+      <a class="enlace-menu enlace-login" href="login.html">Iniciar sesión</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div>
+        <!-- Cambia aquí la fecha de la edición -->
+        <span class="fecha">22 de Enero 2026</span>
+        <h1 class="hero-title">La Salle Business Match</h1>
+        <p class="hero-lema">Donde el talento joven y las empresas hacen match.</p>
+        <p class="hero-text">
+          La feria virtual que conecta empresas y talento joven. Participa como
+          empresa para presentar tus proyectos y descubrir nuevos talentos, o
+          regístrate como visitante para explorar oportunidades, aprender y
+          conectar con líderes del sector.
+        </p>
+      </div>
+
+      <div class="match" role="img" aria-label="Animación: empresas y perfiles de talento que se conectan y hacen match">
+        <div class="match-cabecera" aria-hidden="true"><span>Empresas</span><span></span><span>Talento</span></div>
+
+        <div class="fila" aria-hidden="true">
+          <div class="chip">Tecnología</div>
+          <div class="enlace"><i class="linea"></i><b class="ok">✓</b></div>
+          <div class="chip chip-der">Desarrollo de apps</div>
+        </div>
+        <div class="fila" aria-hidden="true">
+          <div class="chip">Estudio de diseño</div>
+          <div class="enlace"><i class="linea"></i><b class="ok">✓</b></div>
+          <div class="chip chip-der">Diseño gráfico</div>
+        </div>
+        <div class="fila" aria-hidden="true">
+          <div class="chip">Clínica</div>
+          <div class="enlace"><i class="linea"></i><b class="ok">✓</b></div>
+          <div class="chip chip-der">Enfermería</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+
+
+  <!-- EMPRESA / VISITANTE -->
+  <section class="partido">
+    <article class="mitad mitad-empresa">
+      <h3>Soy empresa</h3>
+      <p>Da a conocer tu proyecto y encuentra a las personas que lo harán crecer.</p>
+      <ul>
+        <li>Monta tu stand virtual</li>
+        <li>Presenta tus proyectos y ofertas</li>
+        <li>Conoce a estudiantes y recién titulados</li>
+      </ul>
+      <a href="registro-empresa.html" class="btn btn-navy">Participar como empresa</a>
+    </article>
+
+    <article class="mitad mitad-visitante">
+      <h3>Soy visitante</h3>
+      <p>Explora, pregunta y deja que las empresas te conozcan.</p>
+      <ul>
+        <li>Visita los stands cuando quieras</li>
+        <li>Aprende de líderes del sector</li>
+        <li>Acumula puntos en el ranking</li>
+      </ul>
+      <a href="registro-visitante.html" class="btn btn-yellow">Registrarme como visitante</a>
+    </article>
+  </section>
+  <section class="como">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Así funciona la feria</h2>
+      <p class="sub-seccion">Todo ocurre online, en un solo día y sin moverte de donde estés.</p>
+
+      <div class="pasos">
+        <div class="paso">
+          <span class="paso-num">1</span>
+          <h3>Regístrate</h3>
+          <p>Elige si participas como empresa o como visitante y crea tu cuenta en un par de minutos.</p>
+        </div>
+        <div class="paso">
+          <span class="paso-num">2</span>
+          <h3>Recorre los stands</h3>
+          <p>Descubre los proyectos de cada empresa, sus ofertas y las charlas del programa.</p>
+        </div>
+        <div class="paso">
+          <span class="paso-num">3</span>
+          <h3>Conecta</h3>
+          <p>Habla con las empresas, deja tu perfil y sube posiciones en el ranking de participación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="pie">
+  <nav>
+    <a href="programa.html">Programa</a>
+    <a href="stands.html">Stands</a>
+    <a href="ranking.html">Ranking</a>
+    <a href="centros.html">Centros</a>
+    <a href="nosotros.html">Nosotros</a>
+  </nav>
+  <p>© 2026 La Salle Business Match — Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>

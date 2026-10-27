@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de visitante · La Salle Business Match</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/comun.css">
+  <link rel="stylesheet" href="css/registro-visitante.css">
+</head>
+<body>
+
+<header>
+  <div class="menu-responsive">
+
+    <a href="index.html" class="marca"><span class="logo">LSBM</span>La Salle Business Match</a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">☰</label>
+
+    <!-- Enlaces a las demás páginas (pendientes de crear) -->
+    <nav class="menu-nav">
+      <a class="enlace-menu" href="programa.html">Programa</a>
+      <a class="enlace-menu" href="stands.html">Stands</a>
+      <a class="enlace-menu" href="ranking.html">Ranking</a>
+      <a class="enlace-menu" href="centros.html">Centros</a>
+      <a class="enlace-menu" href="nosotros.html">Nosotros</a>
+      <a class="enlace-menu enlace-login" href="login.html">Iniciar sesión</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+<section class="seccion wrap duo"><aside><h1>Registro de visitante</h1><p>Explora la feria, habla con las empresas y suma puntos en el ranking.</p><ul><li>Acceso a todos los stands</li><li>Charlas y talleres</li><li>Puntos en el ranking</li></ul></aside><form class="formulario"><label>Nombre y apellidos<input type="text" required></label><label>Correo electrónico<input type="email" required></label><label>Estudios<select><option>Bachillerato</option><option>Formación Profesional</option><option>Universidad</option><option>Otros</option></select></label><label>Sector que más te interesa<select><option>Tecnología</option><option>Diseño</option><option>Salud</option><option>Logística</option><option>Otro</option></select></label><label class="check"><input type="checkbox" required> Acepto la política de privacidad</label><button class="btn btn-navy" type="submit">Registrarme</button></form></section>
+</main>
+
+<footer class="pie">
+  <nav>
+    <a href="programa.html">Programa</a>
+    <a href="stands.html">Stands</a>
+    <a href="ranking.html">Ranking</a>
+    <a href="centros.html">Centros</a>
+    <a href="nosotros.html">Nosotros</a>
+  </nav>
+  <p>© 2026 La Salle Business Match — Todos los derechos reservados</p>
+</footer>
+<script>document.querySelector("form").addEventListener("submit",function(e){e.preventDefault();e.target.outerHTML='<p class="exito">¡Gracias! Hemos recibido tu solicitud (demostración: aún no hay servidor).</p>';});</script>
+</body>
+</html>
