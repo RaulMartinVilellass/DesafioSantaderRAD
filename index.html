@@ -42,7 +42,7 @@
 
       <div>
         <!-- Cambia aquí la fecha de la edición -->
-        <span class="fecha">22 de Enero 2026</span>
+        <span class="fecha">3 de Febrero 2027</span>
         <h1 class="hero-title">La Salle Business Match</h1>
         <p class="hero-lema">Donde el talento joven y las empresas hacen match.</p>
         <p class="hero-text">
@@ -51,6 +51,13 @@
           regístrate como visitante para explorar oportunidades, aprender y
           conectar con líderes del sector.
         </p>
+
+        <div class="contador" id="contador" aria-live="polite">
+          <div class="cont-bloque"><b id="c-dias">0</b><span>días</span></div>
+          <div class="cont-bloque"><b id="c-horas">0</b><span>horas</span></div>
+          <div class="cont-bloque"><b id="c-min">0</b><span>min</span></div>
+          <div class="cont-bloque"><b id="c-seg">0</b><span>seg</span></div>
+        </div>
       </div>
 
       <div class="match" role="img" aria-label="Animación: empresas y perfiles de talento que se conectan y hacen match">
@@ -95,6 +102,7 @@
     <article class="mitad mitad-visitante">
       <h3>Soy visitante</h3>
       <p>Explora, pregunta y deja que las empresas te conozcan.</p>
+      <br/>
       <ul>
         <li>Visita los stands cuando quieras</li>
         <li>Aprende de líderes del sector</li>
@@ -141,6 +149,32 @@
   </nav>
   <p>© 2026 La Salle Business Match — Todos los derechos reservados</p>
 </footer>
+
+<script>
+  // Cambia aquí la fecha y hora de la feria (formato AAAA-MM-DDTHH:MM:SS)
+  const FECHA_FERIA = new Date("2027-02-03T00:00:00");
+
+  const contador = document.getElementById("contador");
+
+  function actualizar() {
+    const resta = FECHA_FERIA - new Date();
+
+    if (resta <= 0) {
+      contador.innerHTML = '<p class="cont-fin">¡La feria ya ha comenzado!</p>';
+      clearInterval(temporizador);
+      return;
+    }
+
+    const seg = Math.floor(resta / 1000);
+    document.getElementById("c-dias").textContent  = Math.floor(seg / 86400);
+    document.getElementById("c-horas").textContent = Math.floor((seg % 86400) / 3600);
+    document.getElementById("c-min").textContent   = Math.floor((seg % 3600) / 60);
+    document.getElementById("c-seg").textContent   = seg % 60;
+  }
+
+  const temporizador = setInterval(actualizar, 1000);
+  actualizar();
+</script>
 
 </body>
 </html>

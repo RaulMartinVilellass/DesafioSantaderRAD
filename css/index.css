@@ -167,7 +167,22 @@
 .final .titulo-seccion { margin-bottom: 12px; }
 .final p { color: var(--dim); margin-bottom: 32px; font-size: 1.05rem; }
 .final .hero-buttons { justify-content: center; margin-top: 0; }
+.contador { display: flex; gap: 14px; margin-top: 28px; }
+.cont-bloque {
+      min-width: 78px;
+      padding: 14px 10px;
+      border-radius: 18px;
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(42, 58, 156, 0.2);
+    }
+.cont-bloque b { display: block; font-size: 2rem; font-weight: 800; line-height: 1; color: var(--yellow); }
+.cont-bloque span { font-size: 0.8rem; font-weight: 600; }
+.cont-fin { font-weight: 700; color: var(--blue); }
 @media (max-width: 900px) {
+  .contador { gap: 8px; }
+  .cont-bloque { min-width: 64px; }
   .hero-inner { grid-template-columns: 1fr; gap: 56px; }
   .pasos { grid-template-columns: 1fr; gap: 34px; }
   .partido { grid-template-columns: 1fr; }
