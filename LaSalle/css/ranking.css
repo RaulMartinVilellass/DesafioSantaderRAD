@@ -1,0 +1,8 @@
+/* Estilos de la página: Ranking */
+.tabla { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+.tabla th { text-align: left; padding: 6px 22px; color: var(--dim); font-size: 0.9rem; }
+.tabla td { padding: 18px 22px; background: #fff; font-weight: 600; }
+.tabla td:first-child { border-radius: 16px 0 0 16px; font-size: 1.3rem; font-weight: 800; color: var(--blue); }
+.tabla td:last-child { border-radius: 0 16px 16px 0; text-align: left; }
+.tabla tbody tr:first-child td { background: var(--yellow); color: var(--navy); }
+.nota { margin-top: 18px; color: var(--dim); }

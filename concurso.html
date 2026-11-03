@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concurso en redes sociales · La Salle Business Match</title>
+  <meta name="description" content="Concurso en redes sociales de La Salle Business Match 2027: vídeos verticales de 30 segundos en Instagram y TikTok, 4 categorías y 50 € de premio en cada una.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/comun.css">
+  <link rel="stylesheet" href="css/concurso.css">
+</head>
+<body>
+
+<header>
+  <div class="menu-responsive">
+
+    <a href="index.html" class="marca"><span class="logo">LSBM</span>La Salle Business Match</a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">☰</label>
+
+    <!-- Enlaces a las demás páginas (pendientes de crear) -->
+    <nav class="menu-nav">
+      <a class="enlace-menu" href="programa.html">Programa</a>
+      <a class="enlace-menu" href="stands.html">Stands</a>
+      <a class="enlace-menu" href="ranking.html">Ranking</a>
+      <a class="enlace-menu" href="concurso.html" aria-current="page">Concurso</a>
+      <a class="enlace-menu" href="centros.html">Centros</a>
+      <a class="enlace-menu" href="nosotros.html">Nosotros</a>
+      <a class="enlace-menu enlace-login" href="login.html">Iniciar sesión</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+<!-- CABECERA -->
+<section class="hero-concurso">
+  <div class="wrap">
+    <span class="pildora">III Feria Virtual · La Salle Business Match 2027</span>
+    <h1>Concurso en redes sociales</h1>
+    <p>Publica un vídeo de 30 segundos como empresa simulada y compite por uno de los 4 premios de la feria.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-yellow" href="#categorias">Ver categorías</a>
+      <button type="button" class="btn btn-claro" data-abrir="modal-participar">Cómo participar</button>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDARIO -->
+<section class="wrap bloque" id="calendario">
+  <h2 class="titulo-seccion">Fechas clave</h2>
+  <p class="sub-seccion">Apunta el calendario del concurso.</p>
+
+  <ol class="calendario">
+    <li>
+      <time datetime="2026-12-01">1 dic 2026</time>
+      <div><h3>Apertura del concurso</h3><p>Empieza el plazo de publicación de vídeos.</p></div>
+    </li>
+    <li>
+      <time datetime="2027-01-31">31 ene 2027</time>
+      <div><h3>Cierre del recuento</h3><p>Se cierra el recuento de métricas en redes sociales y el jurado hace su evaluación.</p></div>
+    </li>
+    <li>
+      <time datetime="2027-02-03">3 feb 2027</time>
+      <div><h3>Gala de clausura</h3><p>Anuncio de los ganadores y entrega virtual de los 4 premios.</p></div>
+    </li>
+  </ol>
+</section>
+
+<!-- CATEGORÍAS -->
+<section class="wrap bloque" id="categorias">
+  <h2 class="titulo-seccion">Las 4 categorías</h2>
+  <p class="sub-seccion">Cada empresa simulada puede competir en una o en varias. El producto final siempre es un vídeo vertical de máximo 30 segundos.</p>
+
+  <div class="rejilla">
+
+    <article class="apartado cat" data-num="01">
+      <div class="apartado-top">
+        <span class="etiqueta">Categoría 1</span>
+        <span class="tipo">Premio a la viralidad</span>
+      </div>
+      <h3>Mejor Elevator Pitch Comercial</h3>
+      <p>Presentación ágil, directa y persuasiva donde la empresa expone su propuesta de valor diferencial y capta clientes o socios para la jornada de la feria.</p>
+      <dl class="datos">
+        <div><dt>Primera línea del post</dt><dd><code>[PITCH] Nombre_Empresa - Nombre_Centro</code></dd></div>
+        <div><dt>Hashtag de categoría</dt><dd><code>#PitchLSBM2027</code></dd></div>
+        <div><dt>Premio</dt><dd>50 € (tarjeta regalo), insignia digital y diploma acreditativo</dd></div>
+      </dl>
+    </article>
+
+    <article class="apartado cat" data-num="02">
+      <div class="apartado-top">
+        <span class="etiqueta">Categoría 2</span>
+        <span class="tipo">Jurado</span>
+      </div>
+      <h3>Mejor «Behind the Scenes»</h3>
+      <p>Pieza creativa y natural que refleja el trabajo en equipo, la organización interna, el ambiente de trabajo y los preparativos del aula antes del evento.</p>
+      <dl class="datos">
+        <div><dt>Primera línea del post</dt><dd><code>[BEHIND] Nombre_Empresa - Nombre_Centro</code></dd></div>
+        <div><dt>Hashtag de categoría</dt><dd><code>#BehindLSBM2027</code></dd></div>
+        <div><dt>Premio</dt><dd>50 € (tarjeta regalo), insignia digital y diploma acreditativo</dd></div>
+      </dl>
+    </article>
+
+    <article class="apartado cat" data-num="03">
+      <div class="apartado-top">
+        <span class="etiqueta">Categoría 3</span>
+        <span class="tipo">Jurado</span>
+      </div>
+      <h3>Mejor Spot Comercial</h3>
+      <p>Anuncio en vídeo que promociona de forma profesional un producto o servicio estrella del catálogo comercial de la empresa.</p>
+      <dl class="datos">
+        <div><dt>Primera línea del post</dt><dd><code>[SPOT] Nombre_Empresa - Nombre_Centro</code></dd></div>
+        <div><dt>Hashtag de categoría</dt><dd><code>#SpotLSBM2027</code></dd></div>
+        <div><dt>Premio</dt><dd>50 € (tarjeta regalo), insignia digital y diploma acreditativo</dd></div>
+      </dl>
+    </article>
+
+    <article class="apartado cat" data-num="04">
+      <div class="apartado-top">
+        <span class="etiqueta">Categoría 4</span>
+        <span class="tipo">Jurado</span>
+      </div>
+      <h3>Recomienda a tu socio</h3>
+      <p>Vídeo de cooperación empresarial en el que una empresa simulada recomienda los productos o servicios de una empresa participante de otro centro La Salle.</p>
+      <dl class="datos">
+        <div><dt>Primera línea del post</dt><dd><code>[SOCIO] Nombre_Empresa - Nombre_Centro</code></dd></div>
+        <div><dt>Hashtag de categoría</dt><dd><code>#SOCIOLSBM2027</code></dd></div>
+        <div><dt>Premio</dt><dd>50 € (tarjeta regalo), insignia digital y diploma acreditativo</dd></div>
+      </dl>
+    </article>
+
+  </div>
+</section>
+
+<!-- BOTONES -->
+<section class="wrap bloque acciones">
+  <button type="button" class="btn btn-navy" data-abrir="modal-premio">Cómo se decide el premio</button>
+  <button type="button" class="btn btn-yellow" data-abrir="modal-participar">Cómo participar</button>
+</section>
+
+<!-- DATOS CLAVE -->
+<section class="wrap bloque">
+  <div class="claves">
+    <div class="clave"><b>30 s</b><span>Vídeo vertical, duración máxima</span></div>
+    <div class="clave"><b>Instagram · TikTok</b><span>Una de las dos o ambas</span></div>
+    <div class="clave"><b>50 €</b><span>Tarjeta regalo por categoría</span></div>
+    <div class="clave"><b>@FeriaLSBM</b><span>Cuenta oficial de la feria</span></div>
+  </div>
+  <p class="objetivo">El concurso busca dar visibilidad a la feria en todo el país y convertir @FeriaLSBM en el escaparate digital de la Formación Profesional de La Salle. Además, el alumnado practica marketing digital, comunicación comercial y networking entre centros.</p>
+</section>
+
+<!-- VENTANAS EMERGENTES -->
+<dialog class="modal" id="modal-premio" aria-labelledby="t-premio">
+  <div class="modal-caja">
+    <div class="modal-cab">
+      <h2 id="t-premio">Cómo se decide el premio</h2>
+      <button type="button" class="modal-cerrar" data-cerrar aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-cuerpo">
+      <p class="modal-intro">Dos sistemas distintos, para que el resultado sea transparente.</p>
+      <div class="rejilla">
+
+    <article class="apartado">
+      <span class="etiqueta">Categoría 1</span>
+      <h3>Por métricas</h3>
+      <p>Solo cuentan los vídeos con la etiqueta [PITCH] y el hashtag #PitchLSBM2027. Gana la empresa cuyo vídeo reúna más veces compartido en total al cierre: compartidos del Reel de Instagram más compartidos en TikTok.</p>
+      <p class="desempate"><strong>Desempate:</strong> suma total de «me gusta» y «guardados».</p>
+    </article>
+
+    <article class="apartado">
+      <span class="etiqueta">Categorías 2, 3 y 4</span>
+      <h3>Por jurado</h3>
+      <p>Un jurado asignado por la Comisión de la Feria puntúa cada vídeo con una rúbrica objetiva:</p>
+      <ul class="rubrica">
+        <li>
+          <div class="rub-fila"><span>Mensaje comercial y claridad</span><b>40%</b></div>
+          <div class="barra"><i class="b40"></i></div>
+          <small>Transmitir con nitidez la oferta, la propuesta de valor o la colaboración B2B.</small>
+        </li>
+        <li>
+          <div class="rub-fila"><span>Creatividad y originalidad</span><b>40%</b></div>
+          <div class="barra"><i class="b40"></i></div>
+          <small>Planteamiento visual, sentido del humor, frescura o recurso narrativo.</small>
+        </li>
+        <li>
+          <div class="rub-fila"><span>Calidad audiovisual</span><b>20%</b></div>
+          <div class="barra"><i class="b20"></i></div>
+          <small>Iluminación, sonido limpio, ritmo de edición y dinamismo en los 30 segundos.</small>
+        </li>
+      </ul>
+    </article>
+
+  </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="modal" id="modal-participar" aria-labelledby="t-participar">
+  <div class="modal-caja">
+    <div class="modal-cab">
+      <h2 id="t-participar">Cómo participar</h2>
+      <button type="button" class="modal-cerrar" data-cerrar aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modal-cuerpo">
+      <p class="modal-intro">Para que tu vídeo cuente, sigue estas normas de publicación.</p>
+      <ol class="pasos-concurso">
+    <li>
+      <h3>Graba un vídeo vertical de máximo 30 segundos</h3>
+      <p>Se publica en el feed como Reel de Instagram o vídeo del perfil de TikTok. No se admiten Historias (Stories), porque caducan a las 24 horas.</p>
+    </li>
+    <li>
+      <h3>Publícalo en Instagram, TikTok o en ambas</h3>
+      <p>Se recomienda usar las dos para tener más alcance y más opciones de premio.</p>
+    </li>
+    <li>
+      <h3>Aplica la mecánica de cada red</h3>
+      <p><strong>Instagram:</strong> usa la función «Invitar a un colaborador» con la cuenta @FeriaLSBM, para que el vídeo aparezca en ambos perfiles.<br><strong>TikTok:</strong> menciona a @FeriaLSBM en la descripción del vídeo.</p>
+    </li>
+    <li>
+      <h3>Empieza el texto con el identificador de tu categoría</h3>
+      <p>La primera línea debe ser, por ejemplo, <code>[PITCH] Nombre_Empresa - Nombre_Centro</code>. Sin este formato el vídeo no se clasifica.</p>
+    </li>
+    <li>
+      <h3>Etiqueta y añade los hashtags obligatorios</h3>
+      <p>Menciona a <strong>@FeriaLSBM</strong>, etiqueta la cuenta oficial de tu centro e incluye <strong>#FeriaLSBM2027</strong> más el hashtag de tu categoría.</p>
+    </li>
+  </ol>
+
+  <div class="tabla-caja">
+    <table class="tabla-cat">
+      <caption>Resumen de identificadores por categoría</caption>
+      <thead><tr><th>Categoría</th><th>Título del post</th><th>Hashtag</th></tr></thead>
+      <tbody>
+        <tr><td>1 · Elevator Pitch</td><td><code>[PITCH]</code></td><td><code>#PitchLSBM2027</code></td></tr>
+        <tr><td>2 · Behind the Scenes</td><td><code>[BEHIND]</code></td><td><code>#BehindLSBM2027</code></td></tr>
+        <tr><td>3 · Spot Comercial</td><td><code>[SPOT]</code></td><td><code>#SpotLSBM2027</code></td></tr>
+        <tr><td>4 · Recomienda a tu socio</td><td><code>[SOCIO]</code></td><td><code>#SOCIOLSBM2027</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+    </div>
+  </div>
+</dialog>
+
+</main>
+
+<footer class="pie">
+  <nav>
+    <a href="programa.html">Programa</a>
+    <a href="stands.html">Stands</a>
+    <a href="ranking.html">Ranking</a>
+    <a href="concurso.html">Concurso</a>
+    <a href="centros.html">Centros</a>
+    <a href="nosotros.html">Nosotros</a>
+  </nav>
+  <p>© 2026 La Salle Business Match — Todos los derechos reservados</p>
+</footer>
+<script>
+  document.querySelectorAll("[data-abrir]").forEach(function (b) {
+    b.addEventListener("click", function () { document.getElementById(b.dataset.abrir).showModal(); });
+  });
+  document.querySelectorAll("dialog.modal").forEach(function (d) {
+    d.querySelector("[data-cerrar]").addEventListener("click", function () { d.close(); });
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+  });
+</script>
+</body>
+</html>
