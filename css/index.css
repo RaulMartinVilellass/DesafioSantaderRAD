@@ -1,5 +1,6 @@
 /* Estilos de la página principal */
-.hero { padding: 72px 24px 100px; }
+.hero { padding: 72px 24px 100px; position: relative; overflow: hidden; isolation: isolate; }
+#fondo-hero { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; display: block; pointer-events: none; }
 .hero-inner {
       max-width: 1180px;
       margin: 0 auto;
@@ -180,6 +181,12 @@
 .cont-bloque b { display: block; font-size: 2rem; font-weight: 800; line-height: 1; color: var(--yellow); }
 .cont-bloque span { font-size: 0.8rem; font-weight: 600; }
 .cont-fin { font-weight: 700; color: var(--blue); }
+.hero-title { color: var(--white); }
+.hero .hero-lema { color: #a9c1ff; }
+.hero .hero-text { color: #d3ddff; }
+.hero .cont-bloque { background: rgba(5, 12, 44, 0.85); border: 1px solid rgba(140, 175, 255, 0.35); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35); }
+.hero .match { box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45); }
+.hero .cont-fin { color: var(--yellow); }
 @media (max-width: 900px) {
   .contador { gap: 8px; }
   .cont-bloque { min-width: 64px; }

@@ -12,30 +12,117 @@
 </head>
 <body>
 
-<header>
-  <div class="menu-responsive">
+      <header class="navbar-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-link">
+        <span class="badge-logo">LSBM</span>
+        <span class="brand-title">La Salle Business Match</span>
+      </a>
+      
+      <nav class="nav-menu">
+        <!-- Ítem Programa -->
+        <div class="nav-item dropdown">
+          <a href="programa.html" class="nav-link">Programa <span class="arrow">▾</span></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">
+              <div class="dropdown-col">
+                <h4>Agenda de la Feria</h4>
+                <a href="programa.html#horarios">Horarios y agenda</a>
+                <a href="programa.html#charlas">Charlas y ponencias</a>
+                <a href="programa.html#talleres">Talleres prácticos</a>
+              </div>
+              <div class="dropdown-col highlight-col">
+                <span class="badge-new">Evento Principal</span>
+                <p>Gala de Entrega de Premios y Networking Final.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <a href="index.html" class="marca"><span class="logo">LSBM</span>La Salle Business Match</a>
+        <!-- Ítem Stands -->
+        <div class="nav-item dropdown">
+          <a href="stands.html" class="nav-link">Stands <span class="arrow">▾</span></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">
+              <div class="dropdown-col">
+                <h4>Sectores Destacados</h4>
+                <a href="stands.html?sector=tecnologia">Tecnología y software</a>
+                <a href="stands.html?sector=diseno">Diseño y creatividad</a>
+                <a href="stands.html?sector=salud">Salud y bienestar</a>
+                <a href="stands.html?sector=logistica">Logística y operaciones</a>
+              </div>
+              <div class="dropdown-col">
+                <h4>Explora</h4>
+                <a href="stands.html">Ver todos los stands</a>
+                <a href="registro-empresa.html">Registrar una empresa</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">☰</label>
+        <!-- Ítem Ranking -->
+        <div class="nav-item dropdown">
+          <a href="ranking.html" class="nav-link">Ranking <span class="arrow">▾</span></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">
+              <div class="dropdown-col">
+                <h4>Clasificación</h4>
+                <a href="ranking.html">Votos de empresas</a>
+                <a href="ranking.html#visitantes">Visitantes más activos</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <!-- Enlaces a las demás páginas (pendientes de crear) -->
-    <nav class="menu-nav">
-      <a class="enlace-menu" href="programa.html">Programa</a>
-      <a class="enlace-menu" href="stands.html" aria-current="page">Stands</a>
-      <a class="enlace-menu" href="ranking.html">Ranking</a>
-      <a class="enlace-menu" href="concurso.html">Concurso</a>
-      <a class="enlace-menu" href="centros.html">Centros</a>
-      <a class="enlace-menu" href="nosotros.html">Nosotros</a>
-      <a class="enlace-menu enlace-login" href="login.html">Iniciar sesión</a>
-    </nav>
+        <!-- Ítem Concurso -->
+        <div class="nav-item dropdown">
+          <a href="concurso.html" class="nav-link">Concurso <span class="arrow">▾</span></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">
+              <div class="dropdown-col">
+                <h4>Categorías €50</h4>
+                <a href="concurso.html#pitch">Mejor elevator pitch</a>
+                <a href="concurso.html#behind">Detrás de las cámaras</a>
+                <a href="concurso.html#spot">Spot comercial</a>
+                <a href="concurso.html#socio">Recomienda a un socio</a>
+              </div>
+              <div class="dropdown-col">
+                <h4>Participación</h4>
+                <a href="concurso.html#calendario">Fechas de entrega</a>
+                <a href="concurso.html#modal-participar">Bases del concurso</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  </div>
-</header>
+        <!-- Ítem Centros -->
+        <div class="nav-item dropdown">
+          <a href="centros.html" class="nav-link">Centros <span class="arrow">▾</span></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">
+              <div class="dropdown-col">
+                <h4>Red La Salle</h4>
+                <a href="centros.html">Centros participantes</a>
+                <a href="centros.html#oferta">Ciclos formativos y grados</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ítem Nosotros -->
+        <div class="nav-item">
+          <a href="nosotros.html" class="nav-link">Nosotros</a>
+        </div>
+      </nav>
+
+      <div class="header-actions">
+        <a href="login.html" class="btn-login enlace-login">Iniciar sesión</a>
+      </div>
+    </div>
+  </header>
 
 <main>
-<section class="cabecera-pagina"><div class="wrap"><h1>Stands</h1><p>Pasea por los stands de las empresas participantes. Son ejemplos: aquí irán las empresas reales.</p></div></section><section class="seccion wrap"><div class="filtros"><button type="button" data-f="todos" class=on>Todos</button><button type="button" data-f="tecnologia">Tecnología</button><button type="button" data-f="diseno">Diseño</button><button type="button" data-f="salud">Salud</button><button type="button" data-f="logistica">Logística</button></div><div class="rejilla"><article class="stand" data-s="tecnologia"><span class="etiqueta">Tecnología</span><h3>Empresa tecnológica A</h3><p>Desarrollo de software y soluciones digitales.</p><a class="btn btn-navy" href="#">Visitar stand</a></article><article class="stand" data-s="diseno"><span class="etiqueta">Diseño</span><h3>Estudio de diseño</h3><p>Marca, diseño gráfico y comunicación.</p><a class="btn btn-navy" href="#">Visitar stand</a></article><article class="stand" data-s="salud"><span class="etiqueta">Salud</span><h3>Clínica de ejemplo</h3><p>Cuidado de personas y servicios sanitarios.</p><a class="btn btn-navy" href="#">Visitar stand</a></article><article class="stand" data-s="tecnologia"><span class="etiqueta">Tecnología</span><h3>Empresa tecnológica B</h3><p>Aplicaciones móviles y soporte informático.</p><a class="btn btn-navy" href="#">Visitar stand</a></article><article class="stand" data-s="salud"><span class="etiqueta">Salud</span><h3>Centro de salud</h3><p>Atención sanitaria y bienestar.</p><a class="btn btn-navy" href="#">Visitar stand</a></article><article class="stand" data-s="logistica"><span class="etiqueta">Logística</span><h3>Logística y transporte</h3><p>Gestión de almacenes y distribución.</p><a class="btn btn-navy" href="#">Visitar stand</a></article></div></section>
+<section class="cabecera-pagina"><div class="wrap"><h1>Stands</h1><p>Pasea por los stands de las empresas participantes y vota a tu favorita.</p></div></section><section class="seccion wrap"><div class="filtros"><button type="button" data-f="todos" class=on>Todos</button><button type="button" data-f="tecnologia">Tecnología</button><button type="button" data-f="diseno">Diseño</button><button type="button" data-f="salud">Salud</button><button type="button" data-f="logistica">Logística</button><button type="button" data-f="otro">Otros</button></div><p class="nota" id="aviso" role="status"></p><div class="rejilla" id="rejilla"><p class="nota">Cargando stands…</p></div></section>
 </main>
 
 <footer class="pie">
@@ -49,6 +136,98 @@
   </nav>
   <p>© 2026 La Salle Business Match — Todos los derechos reservados</p>
 </footer>
-<script>var bs=document.querySelectorAll(".filtros button"),ss=document.querySelectorAll(".stand");bs.forEach(function(b){b.addEventListener("click",function(){bs.forEach(function(x){x.classList.remove("on")});b.classList.add("on");ss.forEach(function(s){s.classList.toggle("oculto",b.dataset.f!="todos"&&s.dataset.s!=b.dataset.f)})})});</script>
+<script src="js/api.js"></script>
+<script src="js/perfil.js"></script>
+<script>
+(function () {
+  var rejilla = document.getElementById("rejilla");
+  var aviso = document.getElementById("aviso");
+  var botones = document.querySelectorAll(".filtros button");
+  var CLAVES = ["tecnologia", "diseno", "salud", "logistica"];
+  var filtro = "todos", datos = [], logueado = false, voto = null, esEmpresa = false;
+
+  function slug(s) {
+    s = (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+    return CLAVES.indexOf(s) >= 0 ? s : "otro";
+  }
+  function nodo(tag, clase, texto) {
+    var e = document.createElement(tag);
+    if (clase) e.className = clase;
+    if (texto !== undefined) e.textContent = texto;
+    return e;
+  }
+  function aplicarFiltro() {
+    rejilla.querySelectorAll(".stand").forEach(function (s) {
+      s.classList.toggle("oculto", filtro !== "todos" && s.dataset.s !== filtro);
+    });
+  }
+  function pintar() {
+    rejilla.textContent = "";
+    if (!datos.length) { rejilla.appendChild(nodo("p", "nota", "Todavía no hay empresas registradas.")); return; }
+    datos.forEach(function (d) {
+      var a = nodo("article", "stand");
+      a.dataset.s = slug(d.sector);
+      var cab = nodo("div", "stand-cab");
+      cab.appendChild(window.avatarLSBM(d.nombre_empresa, d.imagen, d.color_avatar, "sm"));
+      a.appendChild(cab);
+      a.appendChild(nodo("span", "etiqueta", (d.sector || "Otros") + (d.numero ? " · Stand " + d.numero : "")));
+      a.appendChild(nodo("h3", "", d.nombre_empresa));
+      a.appendChild(nodo("p", "", d.descripcion || ""));
+      var id = Number(d.id_empresa), b;
+      if (d.sitio_web && /^https?:\/\//i.test(d.sitio_web)) {
+        var cv = nodo("a", "enlace-cv", "Enviar CV a esta empresa →");
+        cv.href = d.sitio_web;
+        cv.target = "_blank";
+        cv.rel = "noopener noreferrer";
+        a.appendChild(cv);
+      }
+      if (esEmpresa) {
+        b = nodo("button", "btn btn-navy", "Solo visitantes pueden votar");
+        b.disabled = true;
+      } else if (!logueado) {
+        b = nodo("a", "btn btn-navy", "Inicia sesión para votar");
+        b.href = "login.html";
+      } else if (voto === id) {
+        b = nodo("button", "btn btn-yellow", "Tu voto ✓");
+        b.disabled = true;
+      } else {
+        b = nodo("button", "btn btn-navy", "Votar");
+        b.type = "button";
+        if (voto !== null) { b.disabled = true; b.title = "Ya has emitido tu voto"; }
+        else { b.addEventListener("click", function () { votar(id, b); }); }
+      }
+      a.appendChild(b);
+      rejilla.appendChild(a);
+    });
+    aplicarFiltro();
+  }
+  function votar(id, b) {
+    b.disabled = true;
+    api("votar", { id_empresa: id }).then(function (r) {
+      if (r.ok) { voto = id; aviso.textContent = "¡Gracias por votar!"; pintar(); }
+      else { aviso.textContent = r.error; b.disabled = false; }
+    });
+  }
+
+  botones.forEach(function (b) {
+    b.addEventListener("click", function () {
+      botones.forEach(function (x) { x.classList.remove("on"); });
+      b.classList.add("on");
+      filtro = b.dataset.f;
+      aplicarFiltro();
+    });
+  });
+
+  Promise.all([api("stands"), sesion]).then(function (res) {
+    var s = res[0], me = res[1];
+    if (!s.ok) { rejilla.textContent = ""; rejilla.appendChild(nodo("p", "nota", s.error)); return; }
+    datos = s.stands;
+    logueado = !!(me.ok && me.logueado);
+    esEmpresa = logueado && me.tipo === "empresa";
+    voto = logueado ? me.voto : null;
+    pintar();
+  });
+})();
+</script>
 </body>
 </html>

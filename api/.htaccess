@@ -1,0 +1,4 @@
+# Impide abrir los archivos de configuración desde el navegador (Apache)
+<FilesMatch "^(config|db)\.php$">
+    Require all denied
+</FilesMatch>

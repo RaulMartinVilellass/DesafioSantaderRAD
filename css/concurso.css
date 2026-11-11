@@ -538,89 +538,7 @@ button.btn-claro {
   font-size: 1.1rem;
 }
 
-/* ---------- Ventanas emergentes ---------- */
-.modal {
-  margin: auto;
-  width: calc(100% - 32px);
-  max-width: 760px;
-  max-height: 88vh;
-  padding: 0;
-  border: 0;
-  border-radius: 28px;
-  background: var(--bg);
-  color: var(--navy);
-  box-shadow: 0 30px 80px rgba(16, 21, 61, 0.45);
-  overflow: hidden;
-}
-
-.modal[open] {
-  display: flex;
-  flex-direction: column;
-  animation: aparece 0.2s ease-out;
-}
-
-.modal::backdrop {
-  background: rgba(16, 21, 61, 0.6);
-  backdrop-filter: blur(4px);
-}
-
-.modal-caja {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  max-height: 88vh;
-}
-
-.modal-cab {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 22px 26px;
-  background: linear-gradient(135deg, var(--navy), var(--blue));
-  color: var(--white);
-}
-
-.modal-cab h2 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
-
-.modal-cerrar {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--white);
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.modal-cerrar:hover {
-  background: var(--yellow);
-  color: var(--navy);
-}
-
-.modal-cerrar:focus-visible {
-  outline: 3px solid var(--yellow);
-  outline-offset: 2px;
-}
-
-.modal-cuerpo {
-  padding: 24px 26px 28px;
-  overflow-y: auto;
-}
-
-.modal-intro {
-  margin-bottom: 18px;
-  color: var(--dim);
-  font-size: 1.05rem;
-}
-
+/* ---------- Ventanas emergentes (estilos base en comun.css) ---------- */
 .modal .rejilla {
   grid-template-columns: 1fr;
   gap: 16px;
@@ -640,33 +558,69 @@ button.btn-claro {
   white-space: normal;
 }
 
-@keyframes aparece {
-  from {
-    opacity: 0;
-    transform: translateY(14px) scale(0.98);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @media (max-width: 700px) {
-  .modal-cab,
-  .modal-cuerpo {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
   .acciones .btn {
     width: 100%;
     text-align: center;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .modal[open] {
-    animation: none;
+/* ---------- Premio: 50 € por concurso ---------- */
+.premio-banner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 30px 36px;
+  border-radius: 28px;
+  background: var(--yellow);
+  color: var(--navy);
+  box-shadow: 0 16px 40px rgba(255, 230, 0, 0.45);
+}
+
+.premio-cifra {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--yellow);
+  line-height: 1;
+}
+
+.premio-cifra b {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.premio-cifra span {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.premio-texto h2 {
+  font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  margin-bottom: 8px;
+}
+
+.premio-texto p {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .premio-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 22px;
+    gap: 20px;
   }
 }
