@@ -580,3 +580,57 @@ header {
   .equipo-grid { grid-template-columns: 1fr; gap: 34px; }
   .foto-equipo { width: 190px; }
 }
+
+/* Nombre del usuario en blanco cuando la sesión está iniciada */
+.usuario-boton {
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.9) !important;
+}
+.usuario-boton .usuario-nombre,
+.usuario-boton .usuario-flecha,
+.usuario-boton > span,
+.usuario-boton > i {
+  color: #ffffff !important;
+}
+.usuario-boton:hover,
+.usuario-boton[aria-expanded="true"] {
+  color: #ffffff !important;
+}
+
+
+/* Corrección de cabecera para GitHub Pages */
+.navbar-header { background:#10153d !important; color:#fff !important; width:100%; position:relative; z-index:1000; }
+.navbar-header .header-container {
+  width:100%; max-width:1200px; margin:0 auto; padding:16px 24px;
+  display:flex !important; flex-direction:row !important; align-items:center !important;
+  justify-content:space-between !important; gap:24px;
+}
+.navbar-header .brand-link { display:flex !important; align-items:center; gap:12px; white-space:nowrap; }
+.navbar-header .brand-title { color:#fff !important; font-weight:700; }
+.navbar-header .nav-menu { display:flex !important; flex-direction:row !important; align-items:center; justify-content:center; gap:14px; margin:0; }
+.navbar-header .nav-item { position:relative; }
+.navbar-header .nav-link { display:inline-flex !important; align-items:center; color:#fff !important; padding:12px 9px; text-decoration:none; white-space:nowrap; }
+.navbar-header .dropdown-menu {
+  display:block; position:absolute; top:100%; left:50%; min-width:280px;
+  background:#fff !important; color:#182044; padding:16px;
+  border:1px solid rgba(16,21,61,.12); border-top:2px solid #ffe600;
+  border-radius:10px; box-shadow:0 12px 28px rgba(16,21,61,.16);
+  opacity:0; visibility:hidden; pointer-events:none;
+  transform:translate(-50%,12px); z-index:1100;
+}
+.navbar-header .nav-item.dropdown:hover .dropdown-menu,
+.navbar-header .nav-item.dropdown:focus-within .dropdown-menu {
+  opacity:1; visibility:visible; pointer-events:auto; transform:translate(-50%,0);
+}
+.navbar-header .dropdown-inner { display:flex; gap:24px; }
+.navbar-header .dropdown-col { display:flex; flex-direction:column; gap:7px; white-space:nowrap; }
+.navbar-header .dropdown-col h4 { color:#727791 !important; font-size:11px; }
+.navbar-header .dropdown-col a { color:#182044 !important; display:block; padding:7px 9px; text-decoration:none; }
+.navbar-header .dropdown-col a:hover { background:#f1f3ff; }
+.navbar-header .header-actions { display:flex !important; align-items:center; gap:12px; }
+.navbar-header .usuario-boton { color:#fff !important; }
+.navbar-header .btn-login { color:#10153d !important; }
+@media(max-width:960px) {
+ .navbar-header .header-container { flex-wrap:wrap; }
+ .navbar-header .nav-menu { display:none !important; }
+}
