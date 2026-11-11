@@ -416,19 +416,3 @@ header {
   .equipo-grid { grid-template-columns: 1fr; gap: 34px; }
   .foto-equipo { width: 190px; }
 }
-
-/* Nombre del usuario en blanco cuando la sesión está iniciada */
-.usuario-boton {
-  color: #ffffff !important;
-  border-color: rgba(255,255,255,0.9) !important;
-}
-.usuario-boton .usuario-nombre,
-.usuario-boton .usuario-flecha,
-.usuario-boton > span,
-.usuario-boton > i {
-  color: #ffffff !important;
-}
-.usuario-boton:hover,
-.usuario-boton[aria-expanded="true"] {
-  color: #ffffff !important;
-}
