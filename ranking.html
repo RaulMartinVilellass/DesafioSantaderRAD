@@ -121,6 +121,11 @@
     </div>
   </header>
 
+<div id="fondo-interactivo-rank">
+  <canvas id="canvas-rank"></canvas>
+  <div id="fondo-imagen-rank"></div>
+</div>
+
 <main>
 <section class="cabecera-pagina"><div class="wrap"><h1>Ranking</h1><p>Las empresas más votadas por los visitantes de la feria.</p></div></section><section class="seccion wrap"><table class="tabla"><thead><tr><th>Puesto</th><th>Empresa</th><th>Votos</th></tr></thead><tbody id="filas"><tr><td colspan="3">Cargando…</td></tr></tbody></table><p class="nota">Cada visitante registrado puede votar una vez desde la página de stands.</p></section>
 </main>
@@ -139,6 +144,7 @@
 
 <script src="js/api.js"></script>
 <script src="js/perfil.js"></script>
+<script src="js/ranking-bg.js"></script>
 <script>
 (function () {
   var tbody = document.getElementById("filas");

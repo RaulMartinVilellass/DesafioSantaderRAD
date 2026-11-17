@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════
    nosotros-bg.js  –  Fondo interactivo
    • Parallax de imagen al mover el ratón
-   • Partículas de estrellas flotantes (canvas)
+   • Estrellas circulares con ciclo aparece/desaparece
    • Brillo dorado que sigue al cursor
 ═══════════════════════════════════════════════ */
 
@@ -23,55 +23,97 @@
   /* ── Parallax suave con mouse ── */
   let mouseX = 0.5, mouseY = 0.5;
   let currentX = 0, currentY = 0;
-  const PARALLAX_STRENGTH = 22; // px máximo de desplazamiento
+  const PARALLAX_STRENGTH = 22;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX / window.innerWidth;
     mouseY = e.clientY / window.innerHeight;
   });
 
-  /* ── Partículas de estrellas ── */
-  const NUM_STARS = 90;
+  /* ── Estados del ciclo de vida ── */
+  const STATE = { FADE_IN: 0, VISIBLE: 1, FADE_OUT: 2 };
+
+  /* ── Estrellas con ciclo de vida ── */
+  const NUM_STARS = 100;
   const stars = [];
 
   class Star {
-    constructor() { this.reset(true); }
+    constructor(stagger) {
+      this.spawn(stagger);
+    }
 
-    reset(initial = false) {
-      this.x     = Math.random() * canvas.width;
-      this.y     = initial ? Math.random() * canvas.height : -4;
-      this.size  = Math.random() * 1.8 + 0.3;
-      this.speed = Math.random() * 0.3 + 0.08;
-      this.alpha = Math.random() * 0.7 + 0.2;
-      this.twinkleSpeed = Math.random() * 0.02 + 0.005;
-      this.twinkleDir   = Math.random() > 0.5 ? 1 : -1;
-      // algunos son dorados como la imagen
-      this.golden = Math.random() < 0.18;
+    spawn(stagger = false) {
+      this.x        = Math.random() * canvas.width;
+      this.y        = Math.random() * canvas.height;
+      this.size     = Math.random() * 2.2 + 0.4;
+      this.golden   = Math.random() < 0.20;
+
+      /* Tiempos aleatorios (en frames) */
+      this.fadeInDur  = 50  + Math.random() * 70;
+      this.visibleDur = 90  + Math.random() * 180;
+      this.fadeOutDur = 50  + Math.random() * 70;
+
+      this.maxAlpha = Math.random() * 0.65 + 0.25;
+      this.alpha    = 0;
+      this.state    = STATE.FADE_IN;
+      this.timer    = 0;
+
+      /* Stagger: distribuir estrellas en distintas fases al arrancar */
+      if (stagger) {
+        const phase = Math.random();
+        if (phase < 0.33) {
+          this.state = STATE.FADE_IN;
+          this.timer = Math.random() * this.fadeInDur;
+          this.alpha = (this.timer / this.fadeInDur) * this.maxAlpha;
+        } else if (phase < 0.66) {
+          this.state = STATE.VISIBLE;
+          this.timer = Math.random() * this.visibleDur;
+          this.alpha = this.maxAlpha;
+        } else {
+          this.state = STATE.FADE_OUT;
+          this.timer = Math.random() * this.fadeOutDur;
+          this.alpha = (1 - this.timer / this.fadeOutDur) * this.maxAlpha;
+        }
+      }
     }
 
     update() {
-      this.y += this.speed;
-      this.alpha += this.twinkleSpeed * this.twinkleDir;
-      if (this.alpha > 0.95 || this.alpha < 0.1) this.twinkleDir *= -1;
-      if (this.y > canvas.height + 4) this.reset();
+      this.timer++;
+
+      switch (this.state) {
+        case STATE.FADE_IN:
+          this.alpha = (this.timer / this.fadeInDur) * this.maxAlpha;
+          if (this.timer >= this.fadeInDur) { this.state = STATE.VISIBLE; this.timer = 0; }
+          break;
+
+        case STATE.VISIBLE:
+          /* pulso suave de brillo */
+          this.alpha = this.maxAlpha * (0.80 + 0.20 * Math.sin(this.timer * 0.04));
+          if (this.timer >= this.visibleDur) { this.state = STATE.FADE_OUT; this.timer = 0; }
+          break;
+
+        case STATE.FADE_OUT:
+          this.alpha = (1 - this.timer / this.fadeOutDur) * this.maxAlpha;
+          if (this.timer >= this.fadeOutDur) this.spawn(); // renace en otro punto
+          break;
+      }
     }
 
     draw() {
+      if (this.alpha <= 0) return;
       ctx.save();
       ctx.globalAlpha = this.alpha;
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = this.golden ? '#f5c842' : '#c8d8ff';
+      ctx.fillStyle   = this.golden ? '#f5c842' : '#c8d8ff';
       ctx.shadowColor = this.golden ? '#f5c842' : '#6ea8fe';
-      ctx.shadowBlur  = this.golden ? 8 : 4;
+      ctx.shadowBlur  = this.golden ? 10 : 5;
       ctx.fill();
       ctx.restore();
     }
   }
 
-  for (let i = 0; i < NUM_STARS; i++) {
-    stars.push(new Star());
-  }
+  for (let i = 0; i < NUM_STARS; i++) stars.push(new Star(true));
 
   /* ── Brillo dorado que sigue al cursor ── */
   let glowX = window.innerWidth  / 2;
@@ -87,8 +129,6 @@
   /* ── Loop de animación ── */
   function animate() {
     requestAnimationFrame(animate);
-
-    /* Limpiar canvas */
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     /* Parallax suave (lerp) */
@@ -96,11 +136,10 @@
     currentY += (((mouseY - 0.5) * PARALLAX_STRENGTH * 2) - currentY) * 0.06;
     fondoImg.style.transform = `translate(${-currentX}px, ${-currentY}px)`;
 
-    /* Mover brillo suavemente */
+    /* Brillo cursor */
     glowX += (targetGlowX - glowX) * 0.07;
     glowY += (targetGlowY - glowY) * 0.07;
 
-    /* Dibujar brillo dorado radial */
     const grad = ctx.createRadialGradient(glowX, glowY, 0, glowX, glowY, 180);
     grad.addColorStop(0,   'rgba(245, 200, 60, 0.13)');
     grad.addColorStop(0.4, 'rgba(100, 140, 255, 0.05)');
@@ -108,7 +147,7 @@
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    /* Dibujar estrellas */
+    /* Estrellas */
     stars.forEach(s => { s.update(); s.draw(); });
   }
 

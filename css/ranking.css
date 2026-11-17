@@ -1,8 +1,62 @@
 /* Estilos de la página: Ranking */
+
+/* ── Fondo interactivo ── */
+#fondo-interactivo-rank {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+#fondo-imagen-rank {
+  position: absolute;
+  inset: -40px;
+  background: url('../Imagenes/rank.png') center bottom / cover no-repeat;
+  transition: transform 0.08s ease-out;
+  will-change: transform;
+}
+#canvas-rank {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#fondo-interactivo-rank::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 8, 35, 0.60);
+}
+
+/* ── Textos en blanco ── */
+.cabecera-pagina h1 { color: #fff; }
+.cabecera-pagina p  { color: rgba(255,255,255,0.80) !important; }
+.nota { margin-top: 18px; color: rgba(255,255,255,0.65); }
+
+/* ── Tabla con glassmorphism ── */
+/* Empujar footer al fondo */
+body { display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; }
+
 .tabla { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
-.tabla th { text-align: left; padding: 6px 22px; color: var(--dim); font-size: 0.9rem; }
-.tabla td { padding: 18px 22px; background: #fff; font-weight: 600; }
-.tabla td:first-child { border-radius: 16px 0 0 16px; font-size: 1.3rem; font-weight: 800; color: var(--blue); }
-.tabla td:last-child { border-radius: 0 16px 16px 0; text-align: left; }
-.tabla tbody tr:first-child td { background: var(--yellow); color: var(--navy); }
-.nota { margin-top: 18px; color: var(--dim); }
+.tabla th { text-align: left; padding: 6px 22px; color: rgba(255,255,255,0.55); font-size: 0.9rem; }
+.tabla td {
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-weight: 600;
+  color: #fff;
+}
+.tabla td:first-child { border-radius: 16px 0 0 16px; font-size: 1.3rem; font-weight: 800; color: #f5c842; border-right: none; }
+.tabla td:nth-child(2) { border-left: none; border-right: none; }
+.tabla td:last-child  { border-radius: 0 16px 16px 0; text-align: left; border-left: none; }
+.tabla tbody tr:first-child td {
+  background: rgba(245, 200, 66, 0.18);
+  border-color: rgba(245, 200, 66, 0.4);
+  color: #f5c842;
+}
+.tabla tbody tr { transition: transform 0.2s ease, background 0.2s ease; }
+.tabla tbody tr:hover td { background: rgba(255,255,255,0.14); transform: scale(1.01); }
+
