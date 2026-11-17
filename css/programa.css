@@ -1,8 +1,144 @@
 /* Estilos de la página: Programa */
-.agenda { list-style: none; border-left: 3px solid var(--blue); margin-left: 8px; }
-.agenda li { position: relative; display: grid; grid-template-columns: 90px 1fr; gap: 18px; padding: 0 0 34px 28px; }
-.agenda li::before { content: ""; position: absolute; left: -11px; top: 6px; width: 19px; height: 19px; border-radius: 50%; background: var(--yellow); border: 3px solid var(--navy); }
-.agenda time { font-size: 1.35rem; font-weight: 800; color: var(--blue); }
-.agenda h3 { font-size: 1.3rem; margin-bottom: 4px; }
-.agenda p { color: var(--dim); }
-@media (max-width: 560px) { .agenda li { grid-template-columns: 1fr; gap: 4px; } }
+
+/* Línea de tiempo horizontal en zigzag */
+.agenda {
+  list-style: none;
+  counter-reset: paso;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0 12px;
+  padding: 10px 60px 24px;
+}
+
+/* Línea central que une todos los puntos */
+.agenda::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 50%;
+  height: 6px;
+  margin-top: -9px;
+  border-radius: 6px;
+  background: repeating-linear-gradient(90deg, var(--blue) 0 18px, var(--yellow) 18px 30px);
+  box-shadow: 0 2px 0 var(--navy);
+}
+
+/* Cada actividad: tarjeta arriba, punto en medio, tarjeta abajo */
+.agenda li {
+  counter-increment: paso;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 56px 52px 56px 1fr;
+  justify-items: center;
+  text-align: center;
+  min-height: 560px;
+}
+
+/* Punto numerado sobre la línea */
+.agenda li::before {
+  content: counter(paso);
+  grid-row: 3;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--navy);
+  border: 4px solid var(--navy);
+  font-size: 1.2rem;
+  font-weight: 800;
+  box-shadow: 0 0 0 6px var(--bg);
+  transition: transform 0.25s;
+}
+
+/* Hora en forma de etiqueta */
+.agenda time {
+  align-self: center;
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  position: relative;
+}
+/* Palito que une hora y punto */
+.agenda time::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  height: 12px;
+  background: var(--navy);
+  transform: translateX(-50%);
+}
+
+/* Tarjeta de cada actividad */
+.agenda li > div {
+  width: 175%;
+  max-width: 230px;
+  padding: 20px 16px;
+  background: var(--white);
+  border-radius: 18px;
+  border: 2px solid var(--navy);
+  box-shadow: 6px 6px 0 var(--blue);
+  position: relative;
+  transition: transform 0.25s;
+}
+.agenda h3 { font-size: 1.15rem; margin-bottom: 6px; color: var(--navy); }
+.agenda p { color: var(--dim); font-size: 0.95rem; }
+
+/* Impares: tarjeta ARRIBA de la línea */
+.agenda li:nth-child(odd) time { grid-row: 2; }
+.agenda li:nth-child(odd) time::after { top: 100%; }
+.agenda li:nth-child(odd) > div {
+  grid-row: 1;
+  align-self: end;
+  border-bottom: 8px solid var(--yellow);
+}
+
+/* Pares: tarjeta ABAJO de la línea, en azul */
+.agenda li:nth-child(even) time { grid-row: 4; }
+.agenda li:nth-child(even) time::after { bottom: 100%; }
+.agenda li:nth-child(even) > div {
+  grid-row: 5;
+  align-self: start;
+  background: var(--blue);
+  border-top: 8px solid var(--yellow);
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+.agenda li:nth-child(even) h3 { color: var(--yellow); }
+.agenda li:nth-child(even) p { color: var(--white); }
+
+/* Último evento destacado en amarillo */
+.agenda li:last-child > div {
+  background: var(--yellow);
+  border-top-color: var(--blue);
+  box-shadow: 6px 6px 0 var(--navy);
+}
+.agenda li:last-child h3,
+.agenda li:last-child p { color: var(--navy); }
+
+/* Efecto al pasar el ratón */
+.agenda li:nth-child(odd):hover > div { transform: translateY(-6px); }
+.agenda li:nth-child(even):hover > div { transform: translateY(6px); }
+.agenda li:hover::before { transform: scale(1.12) rotate(-8deg); }
+
+/* Pantallas medianas y móviles: sigue en zigzag con desplazamiento lateral */
+@media (max-width: 1000px) {
+  .agenda {
+    grid-template-columns: repeat(6, 150px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 10px 50px 28px;
+  }
+  .agenda::before { right: auto; width: calc(6 * 150px + 5 * 12px + 60px); }
+  .agenda li { scroll-snap-align: center; }
+}
