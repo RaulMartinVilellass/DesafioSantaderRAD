@@ -1,4 +1,9 @@
 /* Estilos de la página: Stands */
+
+/* Fondo interactivo (canvas) detrás del contenido */
+#fondo-stands { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+main, .pie { position: relative; z-index: 1; }
+
 .filtros { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; }
 .filtros button { font: inherit; font-weight: 600; padding: 9px 20px; border-radius: 999px; border: 2px solid var(--navy); background: transparent; color: var(--navy); cursor: pointer; transition: background 0.2s; }
 .filtros button:hover, .filtros button.on { background: var(--navy); color: #fff; }

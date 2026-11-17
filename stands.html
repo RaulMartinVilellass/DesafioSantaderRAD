@@ -121,6 +121,8 @@
     </div>
   </header>
 
+<canvas id="fondo-stands" aria-hidden="true"></canvas>
+
 <main>
 <section class="cabecera-pagina"><div class="wrap"><h1>Stands</h1><p>Pasea por los stands de las empresas participantes y vota a tu favorita.</p></div></section><section class="seccion wrap"><div class="filtros"><button type="button" data-f="todos" class=on>Todos</button><button type="button" data-f="tecnologia">Tecnología</button><button type="button" data-f="diseno">Diseño</button><button type="button" data-f="salud">Salud</button><button type="button" data-f="logistica">Logística</button><button type="button" data-f="otro">Otros</button></div><p class="nota" id="aviso" role="status"></p><div class="rejilla" id="rejilla"><p class="nota">Cargando stands…</p></div></section>
 </main>
@@ -138,6 +140,7 @@
 </footer>
 <script src="js/api.js"></script>
 <script src="js/perfil.js"></script>
+<script src="js/fondo-stands.js"></script>
 <script>
 (function () {
   var rejilla = document.getElementById("rejilla");
