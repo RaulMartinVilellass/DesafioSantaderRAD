@@ -1,5 +1,36 @@
 /* Estilos de la página: Nosotros */
-.historia { max-width: 680px; font-size: 1.3rem; font-weight: 500; line-height: 1.5; margin-bottom: 56px; }
+
+/* ── Fondo interactivo ── */
+#fondo-interactivo {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+#fondo-imagen {
+  position: absolute;
+  inset: -40px;
+  background: url('../Imagenes/nosotros_ig.png') center/cover no-repeat;
+  transition: transform 0.08s ease-out;
+  will-change: transform;
+}
+#canvas-fondo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+/* oscurecer ligeramente para que el contenido sea legible */
+#fondo-interactivo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 40, 0.55);
+  backdrop-filter: blur(0.5px);
+}
+
+.historia { max-width: 680px; font-size: 1.3rem; font-weight: 500; line-height: 1.5; margin-bottom: 56px; color: #fff; }
 .valores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .valor { padding: 32px 28px; border-radius: 24px; background: var(--navy); color: #fff; }
 .valor:nth-child(2) { background: var(--blue); }
@@ -8,13 +39,16 @@
 @media (max-width: 800px) { .valores { grid-template-columns: 1fr; } }
 
 /* Presentación del equipo */
+.cabecera-pagina h1 { color: #fff; }
+.cabecera-pagina p  { color: rgba(255,255,255,0.80) !important; }
 .equipo-intro { margin: 8px 0 28px; }
+.equipo-intro h2 { color: #fff; }
 .equipo-intro h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   letter-spacing: -0.8px;
   margin-bottom: 6px;
 }
-.equipo-intro p { color: var(--dim); }
+.equipo-intro p { color: rgba(255,255,255,0.75); }
 .equipo-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -36,8 +70,16 @@
   font-size: 2.4rem;
   font-weight: 700;
   letter-spacing: 1px;
+  overflow: hidden;
 }
-.miembro-equipo h3 { font-size: 1.25rem; font-weight: 700; }
+.foto-equipo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.miembro-equipo h3 { font-size: 1.25rem; font-weight: 700; color: #fff; }
 @media (max-width: 700px) {
   .equipo-grid { grid-template-columns: 1fr; gap: 34px; }
   .foto-equipo { width: 190px; }
