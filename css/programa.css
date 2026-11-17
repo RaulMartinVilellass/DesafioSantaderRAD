@@ -1,5 +1,16 @@
 /* Estilos de la página: Programa */
 
+/* Fondo interactivo (canvas) detrás del contenido */
+#fondo-programa {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+main, .pie { position: relative; z-index: 1; }
+
 /* Línea de tiempo horizontal en zigzag */
 .agenda {
   list-style: none;
@@ -52,7 +63,7 @@
   border: 4px solid var(--navy);
   font-size: 1.2rem;
   font-weight: 800;
-  box-shadow: 0 0 0 6px var(--bg);
+  box-shadow: 0 0 0 6px var(--white);
   transition: transform 0.25s;
 }
 
