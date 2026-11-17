@@ -80,6 +80,15 @@
   display: block;
 }
 .miembro-equipo h3 { font-size: 1.25rem; font-weight: 700; color: #fff; }
+.foto-link { display: inline-block; text-decoration: none; }
+.foto-link .foto-equipo {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.foto-link:hover .foto-equipo {
+  transform: scale(1.07);
+  box-shadow: 0 0 0 4px #f5c842, 0 12px 32px rgba(245,200,60,0.35);
+  cursor: pointer;
+}
 @media (max-width: 700px) {
   .equipo-grid { grid-template-columns: 1fr; gap: 34px; }
   .foto-equipo { width: 190px; }
